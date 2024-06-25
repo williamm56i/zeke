@@ -32,4 +32,9 @@
             ENABLE = 'Y'
         </where>
     </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select
+            <include refid="Base_Column_List" />
+        from BATCH_JOB_TRIGGER_CONFIG
+    </select>
 </mapper>

@@ -1,2 +1,6 @@
 INSERT INTO BATCH_JOB_TRIGGER_CONFIG(JOB_NAME, JOB_DESC, BEAN_NAME, TRIGGER_NAME, CRON_TRIGGER, ENABLE, CREATE_ID, CREATE_DATE, UPDATE_ID, UPDATE_DATE)
 VALUES ('ExampleJob', '範例作業', 'example-job', 'example-job-trigger', '0 * * * * ?', 'Y', 'SYS', NOW(), null, null);
+INSERT INTO BATCH_JOB_TRIGGER_CONFIG(JOB_NAME, JOB_DESC, BEAN_NAME, TRIGGER_NAME, CRON_TRIGGER, ENABLE, CREATE_ID, CREATE_DATE, UPDATE_ID, UPDATE_DATE)
+VALUES ('RainaJob', '萊納作業', 'raina-job', 'raina-job-trigger', '10 * * * * ?', 'Y', 'SYS', NOW(), null, null);
+INSERT INTO BATCH_JOB_TRIGGER_CONFIG(JOB_NAME, JOB_DESC, BEAN_NAME, TRIGGER_NAME, CRON_TRIGGER, ENABLE, CREATE_ID, CREATE_DATE, UPDATE_ID, UPDATE_DATE)
+VALUES ('BertoltJob', '貝爾托特作業', 'bertolt-job', 'bertolt-job-trigger', '20 * * * * ?', 'N', 'SYS', NOW(), null, null);

@@ -12,4 +12,6 @@ public interface BatchJobTriggerConfigDao {
     String selectJobNameByBean(@Param("beanName") String beanName);
 
     List<BatchJobTriggerConfig> selectEnableJobTrigger();
+
+    List<BatchJobTriggerConfig> selectAll();
 }
