@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.williamm56i.zeke.persistence.dao.BatchJobTriggerConfigDao">
+    <resultMap id="BaseResultMap" type="com.williamm56i.zeke.persistence.vo.BatchJobTriggerConfig">
+        <id column="JOB_NAME" property="jobName" jdbcType="VARCHAR" />
+        <result column="JOB_DESC" property="jobDesc" jdbcType="VARCHAR" />
+        <result column="BEAN_NAME" property="beanName" jdbcType="VARCHAR" />
+        <result column="TRIGGER_NAME" property="triggerName" jdbcType="VARCHAR" />
+        <result column="CRON_TRIGGER" property="cronTrigger" jdbcType="VARCHAR" />
+        <result column="ENABLE" property="enable" jdbcType="CHAR" />
+        <result column="CREATE_ID" property="createId" jdbcType="VARCHAR" />
+        <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+        <result column="UPDATE_ID" property="updateId" jdbcType="VARCHAR" />
+        <result column="UPDATE_DATE" property="updateDate" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        JOB_NAME, JOB_DESC, BEAN_NAME, TRIGGER_NAME, CRON_TRIGGER, ENABLE, CREATE_ID, CREATE_DATE, UPDATE_ID, UPDATE_DATE
+    </sql>
+    <select id="selectJobNameByBean" resultType="java.lang.String">
+        select
+            <include refid="Base_Column_List" />
+        from BATCH_JOB_TRIGGER_CONFIG
+        <where>
+            BEAN_NAME = #{beanName,jdbcType=VARCHAR}
+        </where>
+    </select>
+    <select id="selectEnableJobTrigger" resultMap="BaseResultMap">
+        select
+            <include refid="Base_Column_List" />
+        from BATCH_JOB_TRIGGER_CONFIG
+        <where>
+            ENABLE = 'Y'
+        </where>
+    </select>
+</mapper>

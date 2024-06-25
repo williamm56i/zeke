@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+    schema: classpath:schema.sql
+  application:
+    name: zeke
+server:
+  port: 8280
+  servlet:
+    context-path: /zeke
+mybatis:
+  mapper-locations: classpath:/sqlmap/*.xml
+module:
+  ymir: http://localhost:8080/ymir
+  armin: http://localhost:8180/armin
