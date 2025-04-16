@@ -6,7 +6,7 @@ Scheduler架構專案，定義Armin中Job的Trigger以實現「批次業務邏�
 
 ### 技術框架
 * Java version 18
-* Spring boot 3.3.0
+* Spring boot 3.3.10
 * Spring Scheduling
 * Maven
 * Mybatis
