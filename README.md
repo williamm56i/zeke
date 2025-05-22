@@ -6,7 +6,7 @@ Scheduler架構專案，定義Armin中Job的Trigger以實現「批次業務邏�
 
 ### 技術框架
 * Java version 18
-* Spring boot 3.3.10
+* Spring boot 3.3.11
 * Spring Scheduling
 * Maven
 * Mybatis
@@ -83,7 +83,7 @@ public void method() {
 * 參考package：scheduled
 * 欲解決維運問題：傳統排程觸發時間以cron字串定義於程式碼中，若因業務需要欲調整觸發時間或停止輪巡，則需調整程式法後安排公司上線程序，曠日費時
 * 作法概念：將排程觸發時間定義於資料表中，專案啟動後以一輪巡schedule(refreshJobTrigger)檢視資料表，將即時的排程設定更新進taskScheduler中
-* 實作方法：為每支Armin Job定義專屬的trigger(實作Runnable)程式成bean，專案啟動後透由refreshJobTrigger取得資料表(BATCH_JOB_TRIGGER_CONFIG)中所有Job觸發設定，判斷或起或停或調整觸發時間後更新taskScheduler
+* 實作方法：為每支Armin Job定義專屬的trigger(實作Runnable)程式成bean，專案啟動後透由refreshJobTrigger取得資料表(BATCH_JOB_TRIGGER_CONFIG)中所有Job觸發設定，判斷啟停或調整觸發時間後更新taskScheduler
 * 運作模式：Trigger程式的觸發時間一到，透過HTTP呼叫Armin API /executeJob?beanName=，Armin再透由getBean執行run()開始跑批
 ```java
 /* 觸發程式 */
